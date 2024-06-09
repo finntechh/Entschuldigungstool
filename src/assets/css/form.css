@@ -1,0 +1,49 @@
+
+.form-container {
+    border: 3px solid black;
+    border-radius: 20px;
+    background-color: var(--blue);
+    margin: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+h3 {
+    text-align: center;
+}
+
+form {
+    margin: 2rem;
+    width: 100%;
+}
+
+p {
+    margin: .5rem 0 .2rem 0;
+}
+
+.text-input, .plz-input, .stadt-input {
+    padding: 0.3rem 0;
+    width: 100%;
+    font-size: 18px;
+}
+
+.adresse-inputs {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.stadt {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.plz {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

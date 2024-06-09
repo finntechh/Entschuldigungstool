@@ -1,0 +1,62 @@
+
+* {
+    font-family: sans-serif;
+    margin: 0;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: "biocats";
+    src: url("../fonts/Biocats.ttf");
+}
+
+div, ul, li, form, label, input {
+    border: 1px solid red;
+}
+
+:root {
+    --dark: #1e1e1e;
+    --light: #f9f9f9;
+    --blue: #3fc2ff;
+}
+
+/* NAVBAR */
+
+nav {
+    background-color: var(--dark);
+    display: flex;
+    align-items: center;
+}
+
+.logo-container {
+    width: 30%;
+}
+
+.nav-list-container {
+    padding: 1rem;
+    width: 70%;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav-item {
+    color: var(--light);
+    font-family: biocats;
+    margin: 0 1rem;
+    font-size: 24px;
+}
+
+.nav-item i {
+    font-size: 28px;
+}
+
+.nav-item:hover {
+    color: var(--blue);
+    transform: scale(1.1);
+}
+
+/* NAVBAR-ENDE */

@@ -1,9 +1,13 @@
 <script setup>
-import Tool from '../components/tool.vue'
+import Base from '../components/base.vue'
+import Empfaenger from '../components/empfaenger.vue'
 </script>
 
 <template>
+  <header>
+    <Base />
+  </header>
   <main>
-    <Tool />
+    <Empfaenger></Empfaenger>
   </main>
 </template>
