@@ -1,7 +1,8 @@
 <script setup>
-import Base from '../components/base.vue'
-import Empfaenger from '../components/empfaenger.vue'
+import Base from '@/components/base.vue'
+import Empfaenger from '@/components/empfaenger.vue'
 import Absender from '@/components/absender.vue'
+import Zeitraum from '@/components/zeitraum.vue'
 </script>
 
 <template>
@@ -11,5 +12,6 @@ import Absender from '@/components/absender.vue'
   <main>
     <Empfaenger></Empfaenger>
     <Absender></Absender>
+    <Zeitraum></Zeitraum>
   </main>
 </template>
