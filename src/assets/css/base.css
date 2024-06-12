@@ -11,7 +11,7 @@
 }
 
 div, ul, li, form, label, input {
-    border: 1px solid red;
+    border: 1px solid rd;
 }
 
 :root {
@@ -26,6 +26,11 @@ nav {
     background-color: var(--dark);
     display: flex;
     align-items: center;
+}
+
+header {
+    position: sticky;
+    top: 0;
 }
 
 .logo-container {

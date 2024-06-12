@@ -1,26 +1,31 @@
 
 <template>
     <div class="form-container">
-        <form action="" @submit.prevent="handleEmpfaengerForm(), checkGenderValue()">
+        <form action="" @submit.prevent="handleEmpfaengerForm()">
             <h3>Empfänger</h3>
             <label for="schuleName">
             <label for="lehrerName">
                 <p>Name des Lehrers</p>
             </label> 
             <input class="text-input" type="text" name="lehrerName" v-model="newLehrerName"> 
+
             <label for="lehrerGender">
                 <p>Geschlecht des Lehrers</p>
             </label>
             <input class="check-input" type="checkbox" name="weiblich" id="wCeckbox" v-model="newLehrerFemale"> weiblich
             <input class="check-input" type="checkbox" name="maennlich" id="mCeckbox" v-model="newLehrerMale"> männlich
-            <p v-if="genderValueIssue">Bitte nur ein Geschlecht auswählen!</p>
+            <p v-if="newLehrerFemale && newLehrerMale == true">Bitte nur ein Geschlecht auswählen!</p>
+            <p v-else>Bitte ein Geschlecht auswählen.</p> 
+
             <p>Name der Schule</p>
             </label> 
             <input class="text-input" type="text" name="schuleName" v-model="newSchuleName">
+
             <label for="schuleAdresse">
                 <p>Adresse der Schule</p>
             </label> 
             <input class="text-input" type="text" name="schuleAdresse" v-model="newSchuleAdresse">
+
             <div class="adresse-inputs">
                 <div class="plz">
                     <p>Plz</p>
@@ -31,7 +36,14 @@
                     <input class="stadt-input" type="text" name="schuleStadt" v-model="newSchuleStadt">
                 </div>
             </div>
-            <input type="submit" value="Absenden"> 
+
+            <div class="btn-container" v-if="!formSubmitted">
+                <input class="inputBtn" type="submit" value="Absenden">
+            </div> 
+            <div class="btn-container" v-else>
+                <input class="inputBtn" type="submit" value="Abgesendet" id="btn-sent">
+            </div>
+            
         </form>
     </div>
 </template>
@@ -45,23 +57,12 @@
     const newSchuleName = ref("");
     const newLehrerName = ref("");
     const newLehrerFemale = ref(false);
-    const newLehrerMale = ref(true);
+    const newLehrerMale = ref(false);
     const newSchuleAdresse = ref("");
     const newSchuleStadt =  ref("");
     const newSchulePlz =  ref("");
 
-    let genderValueIssue = false;
     let formSubmitted = false;
-
-    const checkGenderValue = () => {
-
-        if (newLehrerFemale.value && newLehrerMale.value == true) {
-            genderValueIssue = true;
-        }
-        
-        console.log("Gender issue")
-
-    };
 
 
     const handleEmpfaengerForm = () => {
@@ -85,6 +86,14 @@
         //sendFormData(empfaenger);
         formSubmitted = true;
         console.log("Email übergeben", empfaenger)
+
+        newSchuleName.value = "";
+        newLehrerName.value = "";
+        newLehrerFemale.value = false;
+        newLehrerMale.value = false;
+        newSchuleAdresse.value = "";
+        newSchuleStadt.value =  "";
+        newSchulePlz.value = "";
     }
 
     const sendFormData = async (empfaenger) => {
