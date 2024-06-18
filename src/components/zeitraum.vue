@@ -1,36 +1,39 @@
 
 <template>
     <div class="form-container">
-        <form action="" @submit.prevent="handleAbsenderForm()">
+        <form action="" @submit.prevent="handleZeitraumForm()">
             <h3>Zeitraum</h3>
-            <label for="schuelerName">
-                <p>Name</p>
-            </label> 
-            <input class="text-input" type="text" name="schuelerName" v-model="newSchuelerName"> 
-
-            <label for="schuelerAdresse">
-                <p>Adresse</p>
-            </label> 
-            <input class="text-input" type="text" name="schuelerAdresse" v-model="newSchuelerAdresse">
-
-            <div class="adresse-inputs">
-                <div class="plz">
-                    <p>Plz</p>
-                    <input class="plz-input" type="number" name="schuelerPlz" v-model="newSchuelerPlz">
-                </div>
-                <div class="stadt">
-                    <p>Stadt</p>
-                    <input class="stadt-input" type="text" name="schuelerStadt" v-model="newSchuelerStadt">
-                </div>
+            <div v-if="!mehrereFehltage">
+                <label for="fehltag">
+                    <p>Fehltag</p>
+                </label> 
+                <input class="text-input" type="date" name="fehltag" v-model="newFehltag"> 
             </div>
 
-            <div class="btn-container" v-if="!formSubmitted">
+            <label for="mehrereFehltag">
+                <p>Mehrere Fehltage?</p>
+            </label> 
+            <input class="check-input" type="checkbox" name="fehltag" v-model="mehrereFehltage"> Ja
+
+            <div v-if="mehrereFehltage">
+
+                <label for="fehltag">
+                    <p>Von</p>
+                </label> 
+                <input class="text-input" type="date" name="fehltag" v-model="newVonFehltag"> 
+                <label for="fehltag">
+                    <p>Bis</p>
+                </label> 
+                <input class="text-input" type="date" name="fehltag" v-model="newBisFehltag"> 
+
+            </div>
+
+            <div class="btn-container" v-if="formIntact">
                 <input class="inputBtn" type="submit" value="Absenden">
             </div> 
             <div class="btn-container" v-else>
-                <input class="inputBtn" type="submit" value="Abgesendet" id="btn-sent">
+                <input class="inputBtn" value="Abgesendet" id="btn-sent">
             </div> 
-            
         </form>
     </div>
 </template>
@@ -41,52 +44,51 @@
     import { onMounted, ref } from "vue";
     import axios from "axios";
 
-    const newSchuelerName = ref("");
-    const newSchuelerAdresse = ref("");
-    const newSchuelerStadt =  ref("");
-    const newSchuelerPlz =  ref("");
+    const newFehltag = ref("");
+    const newVonFehltag = ref("");
+    const newBisFehltag = ref("");
 
-    let formSubmitted = false;
+    let mehrereFehltage = ref(false);
+    
+    let formIntact = true;
 
 
-    const handleAbsenderForm = () => {
+    const handleZeitraumForm = () => {
 
-        const schuelerName = newSchuelerName.value
-        const schuelerAdresse = newSchuelerAdresse.value
-        const schuelerStadt = newSchuelerStadt.value
-        const schuelerPlz = newSchuelerPlz.value
+        const fehltag = newFehltag.value;
+        const vonFehltag = newVonFehltag.value;
+        const bisFehltag = newBisFehltag.value;
 
-        const absender = {
-            schuelerName: schuelerName,
-            schuelerAdresse: schuelerAdresse,
-            schuelerStadt: schuelerStadt,
-            schuelerPlz: schuelerPlz,
+        const zeitraum = {
+            fehltag: fehltag,
+            vonFehltag: vonFehltag,
+            bisFehltag: bisFehltag,
         }
 
-        formSubmitted = true;
-        console.log("Email übergeben", absender)
+        formIntact = false;
+        console.log("Email übergeben", zeitraum)
 
-        newSchuelerName.value = "";
-        newSchuelerAdresse.value = "";
-        newSchuelerStadt.value = "";
-        newSchuelerPlz.value = "";
+        newFehltag.value = "";
+        newVonFehltag.value = "";
+        newBisFehltag.value = "";
+
     }
 
-    const sendFormData = async (absender) => {
-        try {
-            const response = await axios.post('url', absender);
-            if (response.status === 200) {
-            console.log("Übertragung erfolgreich");
-            resetSubmit();
-            }
-            else {
-            alert('Etwas ist schiefgelaufen.');
-            }
-        }
-        catch (error) {
-            console.error('Error: ', error);
-            alert('Fehler aufgetreten.', error);
-        }
-    }
+    // const sendFormData = async (zeitraum) => {
+    //     try {
+    //         const response = await axios.post('url', zeitraum);
+    //         if (response.status === 200) {
+    //         console.log("Übertragung erfolgreich");
+    //         resetSubmit();
+    //         }
+    //         else {
+    //         alert('Etwas ist schiefgelaufen.');
+    //         }
+    //     }
+    //     catch (error) {
+    //         console.error('Error: ', error);
+    //         alert('Fehler aufgetreten.', error);
+    //     }
+    // }
 
 </script>

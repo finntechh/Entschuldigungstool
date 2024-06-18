@@ -28,7 +28,7 @@
                 <input class="inputBtn" type="submit" value="Absenden">
             </div> 
             <div class="btn-container" v-else>
-                <input class="inputBtn" type="submit" value="Abgesendet" id="btn-sent">
+                <input class="inputBtn" value="Abgesendet" id="btn-sent">
             </div> 
             
         </form>
