@@ -7,7 +7,7 @@
                 <label for="fehltag">
                     <p>Fehltag</p>
                 </label> 
-                <input class="text-input" type="date" name="fehltag" v-model="newFehltag"> 
+                <input class="date-input" type="date" name="fehltag" v-model="newFehltag"> 
             </div>
 
             <label for="mehrereFehltag">
@@ -20,11 +20,12 @@
                 <label for="fehltag">
                     <p>Von</p>
                 </label> 
-                <input class="text-input" type="date" name="fehltag" v-model="newVonFehltag"> 
+                <input class="date-input" type="date" name="fehltag" v-model="newVonFehltag"> 
+
                 <label for="fehltag">
                     <p>Bis</p>
                 </label> 
-                <input class="text-input" type="date" name="fehltag" v-model="newBisFehltag"> 
+                <input class="date-input" type="date" name="fehltag" v-model="newBisFehltag"> 
 
             </div>
 

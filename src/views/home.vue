@@ -13,5 +13,10 @@ import Zeitraum from '@/components/zeitraum.vue'
     <Empfaenger></Empfaenger>
     <Absender></Absender>
     <Zeitraum></Zeitraum>
+
+    <div class="footer">
+
+
+    </div>
   </main>
 </template>

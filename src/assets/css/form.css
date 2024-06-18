@@ -79,3 +79,7 @@ p {
     background-color: green;
     width: 7rem;
 }
+
+.date-input {
+    min-width: 100%;
+}
