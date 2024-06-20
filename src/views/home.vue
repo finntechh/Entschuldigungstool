@@ -1,5 +1,6 @@
 <script setup>
-import Base from '@/components/base.vue'
+import Nav from '@/components/nav.vue'
+import Footer from '@/components/footer.vue';
 import Empfaenger from '@/components/empfaenger.vue'
 import Absender from '@/components/absender.vue'
 import Zeitraum from '@/components/zeitraum.vue'
@@ -7,16 +8,14 @@ import Zeitraum from '@/components/zeitraum.vue'
 
 <template>
   <header>
-    <Base />
+    <Nav></Nav>
   </header>
   <main>
     <Empfaenger></Empfaenger>
     <Absender></Absender>
     <Zeitraum></Zeitraum>
-
-    <div class="footer">
-
-
-    </div>
   </main>
+  <footer>
+    <Footer></Footer>
+  </footer>
 </template>

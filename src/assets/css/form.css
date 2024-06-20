@@ -14,9 +14,12 @@ h3 {
     margin-bottom: 1.5rem;
 }
 
-form {
+form:not(p) {
     margin: 2rem;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 p {
@@ -83,3 +86,13 @@ p {
 .date-input {
     min-width: 100%;
 }
+
+.label-input {
+    margin: 0.5rem 0;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-self: center;
+    flex-direction: column;
+}
+

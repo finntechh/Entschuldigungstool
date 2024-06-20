@@ -1,10 +1,17 @@
 <script setup>
-import Base from '../components/base.vue'
+import Nav from '@/components/nav.vue'
+import Footer from '@/components/footer.vue'
+import LoginForm from '@/components/loginForm.vue'
 </script>
 
 <template>
+  <header>
+    <Nav />
+  </header>
   <main>
-    <Base />
-    Login Page
+    <LoginForm></LoginForm>
   </main>
+  <footer>
+    <Footer />
+  </footer>
 </template>
