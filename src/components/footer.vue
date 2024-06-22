@@ -10,9 +10,6 @@
         </router-link>
       </ul>
     </div>
-    <div class="footer-text">
-      <span>@Finn</span>
-    </div>
   </div>
 
 </template>

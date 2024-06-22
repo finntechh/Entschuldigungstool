@@ -10,6 +10,7 @@ import LoginForm from '@/components/loginForm.vue'
   </header>
   <main>
     <LoginForm></LoginForm>
+    <div class="spacer"></div>
   </main>
   <footer>
     <Footer />

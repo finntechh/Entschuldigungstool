@@ -5,11 +5,11 @@
         <form action="" @submit.prevent="handleLoginForm()">
             <div class="label-input">
                 <label for="benutzername">Benutzername</label>
-                <input type="text" v-model="newBenutzername">
+                <input class="text-input" type="text" v-model="newBenutzername">
             </div>
             <div class="label-input">
                 <label for="passwort">Passwort</label>
-                <input type="password" v-model="newPasswort">
+                <input class="text-input" type="password" v-model="newPasswort">
             </div>
             <div class="btn-container" v-if="!formSubmitted">
                 <input class="inputBtn" type="submit" value="Absenden">
