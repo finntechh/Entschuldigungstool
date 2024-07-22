@@ -68,42 +68,23 @@ header {
 
 /* FOOTER */
 
+footer {
+    position: relative;
+    width: 100%;
+}
+
 .footer-container {
-    height: 15rem;
+    height: 12rem;
     display: flex;
-    align-items: flex-start;
-    justify-content: space-around;
+    align-items: flex-end;
+    justify-content: space-evenly;
     background-color: var(--dark);
-}
-
-.footer-link-list {
-    padding: 0;
-    margin: 2rem 0;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: center;
-}
-
-.footer-link-list i {
-    font-size: 64px;
-    color: var(--light);
-}
-
-.footer-link-list span {
-    display: block;
-    font-size: large;
-    color: var(--light);
-    margin: 0.5rem 0;
-}
-
-.footer-text {
+    padding: 0 0 3rem 0;
     color: #555555;
-    margin-top: 12rem;
 }
 
-.spacer {
-    height: 10.5rem;
+.simple-router-link {
+    color: var(--light);
 }
 
 /* FOOTER-ENDE */

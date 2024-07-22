@@ -2,14 +2,7 @@
 <template>
 
   <div class="footer-container">
-    <div class="footer-links">
-      <ul class="footer-link-list">
-        <router-link to="/"> <span>Home</span> </router-link>
-        <router-link to="/login">
-          <i class="material-icons">person</i>
-        </router-link>
-      </ul>
-    </div>
+    @Finn
   </div>
 
 </template>
